@@ -5,15 +5,13 @@ const app = express()
 const cors = require('cors')
 
 app.use(cors())
-
-
-
+app.use(express.static('dist'))
 app.use(express.json())
 app.use(morgan("tiny"))
 
 let persons = [
     { 
-      "id": "1",
+      "id": "1",  
       "name": "Arto Hellas", 
       "number": "040-123456"
     },
