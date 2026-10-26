@@ -10,14 +10,15 @@
     "start": "node index.js",
     "dev": "node --watch index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:ui": "@powershell Remove-Item -Recurse -Force dist && cd C\\Users\\dwals\\Programs\\Helsinki\\Chapter 2\\phonebook && npm run build && @powershell Copy-Item dist -Recurse ../phonebook-backend",
+    "build:ui": "@powershell Remove-Item -Recurse -Force dist && cd C:/Users/dwals/Programs/Helsinki/Chapter 2/phonebook && npm run build && @powershell Copy-Item dist -Recurse ../../Chapter 3 exercises/phonebook-backend",
     "deploy": "fly deploy",
-    "deploy:full": "npm run build:ui && npm run deploy",    
+    "deploy:full": "npm run build:ui && npm run deploy",
     "logs:prod": "fly logs"
   },
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1",
+    "mongoose": "^9.11.1",
     "morgan": "^1.12.1"
   },
   "devDependencies": {
