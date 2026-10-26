@@ -15,14 +15,14 @@ mongoose.connect(url, { family: 4 })
 
 
 const personSchema = new mongoose.Schema({
-  personName: String,
+  name: String,
   number: String,
 })
 
 const Person = mongoose.model('Person', personSchema)
 
 const person =  new Person({
-    personName: process.argv[3],
+    name: process.argv[3],
     number: process.argv[4],
 })
 
@@ -37,7 +37,7 @@ if(process.argv.length === 3){
 
 if (process.argv.length === 5){
     person.save().then(result =>{
-        console.log("added " + person.personName + " number " + person.number + " to phonebook")
+        console.log("added " + person.name + " number " + person.number + " to phonebook")
         mongoose.connection.close()
     })
 }
