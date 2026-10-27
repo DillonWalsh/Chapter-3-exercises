@@ -22,7 +22,7 @@ app.get('/api/persons', (request, response) => {
 })
 
 app.get('/info', (request, response) => {
-  const bookSize = persons.length
+  const bookSize = Person.length
   const time = new Date().toString()
   response.send('Phonebook has info for ' +  bookSize + ' people </br> ' + time)
 }) 
