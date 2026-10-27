@@ -49,6 +49,7 @@ app.get('/info', (request, response) => {
   response.send('Phonebook has info for ' +  bookSize + ' people </br> ' + time)
 }) 
 
+/** Find person by ID */
 app.get('/api/persons/:id', (request, response) => {
   Person.findById(request.params.id).then(person => {
     response.json(person)
@@ -56,9 +57,10 @@ app.get('/api/persons/:id', (request, response) => {
 })
 
 app.delete('/api/persons/:id', (request, response) =>{
-  const id = request.params.id
-  persons = persons.filter(person => person.id != id)
-  response.status(204).end()
+  Person.findByIdAndDelete(request.params.id)
+    .then(result => {
+      response.status(204).end()
+    })
 })
 
 
